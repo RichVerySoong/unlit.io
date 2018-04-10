@@ -1,2 +1,0 @@
-# io
-🎮 Node online game
