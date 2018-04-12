@@ -1,5 +1,5 @@
 {
-  "name": "phantoms.io",
+  "name": "unlit.io",
   "version": "1.0.0",
   "description": "Online flashlight tag",
   "main": "server/server.js",
