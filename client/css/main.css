@@ -27,6 +27,15 @@ canvas {
 	box-sizing: border-box;
 }
 
+@-webkit-keyframes flicker {
+  	0% {opacity:0;}
+  	9% {opacity:0;}
+	10% {opacity:.5;}
+	13% {opacity:0;}
+	20% {opacity:.5;}
+	25% {opacity:1;}
+}
+
 #startMenu p {
 	padding: 0;
 	margin: 20px;
@@ -35,6 +44,7 @@ canvas {
 	font-family: de-walpergens-pica;
 	font-weight: bold;
     font-style: italic;
+	-webkit-animation: flicker 4s infinite;
 }
 
 #playerNameInput {
@@ -64,10 +74,11 @@ canvas {
 	height: 40px;
 	box-sizing: border-box;
 	font-size: large;
+	font-family: de-walpergens-pica;
 	color: white;
 	text-align: center;
 	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-	background: #2ecc71;
+	background: #555;
 	border: 0;
 	border-bottom: 2px solid #222;
 	cursor: pointer;
@@ -81,7 +92,7 @@ canvas {
 
 #startButton:active, #startButton:hover {
 	top: 1px;
-	background: #55D88B;
+	background: #777;
 	outline: none;
 	-webkit-box-shadow: none;
 	box-shadow: none;
