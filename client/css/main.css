@@ -38,7 +38,7 @@ canvas {
 
 #startMenu {
     margin: auto;
-    margin-top: 50px;
+    margin-top: 60px;
     width: 350px;
     padding: 20px;
     border-radius: 5px 5px 5px 5px;
@@ -129,4 +129,6 @@ canvas {
   text-decoration: bold;
   font-size: 20px;
   font-family: de-walpergens-pica;
+  margin-top: 15px;
+  opacity: 0;
 }

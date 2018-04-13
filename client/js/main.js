@@ -20,14 +20,18 @@ function memberLogin() {
 $(document).ready(function() {
   var rules = $('#rules');
   function runIt() {
-  rules.animate({opacity:'-=1'}, 3000);
-  rules.animate({opacity:'+=1'}, 3000, runIt);
+  rules.animate({opacity:'+=2'}, 3000);
+  rules.animate({opacity:'-=2'}, 3000, runIt);
 }
   runIt();
 });
-// function changeText() {
-//   var place = 0;
-//   var ruleList = ["Move your mouse to turn you character and flashlight", "Hit other ghosts with your flashlight", "Don't get hit by another ghost's flahslight", "Be the last ghost living"];
-//   document.getElementById("rules").innerHTML = "HELLO";
-//   runIt();
-// }
+
+function changeText() {
+  var place = 0;
+  var ruleList = ["Move your mouse to turn you character and flashlight", "Click to toggle your flashlight", "Hit other ghosts with your flashlight", "Don't get hit by another ghost's flahslight", "Be the last ghost living"];
+  setInterval(function(changeText){
+    document.getElementById("rules").innerHTML = ruleList[place%5]
+    place += 1
+  }, 6000);
+}
+window.onload = changeText()
