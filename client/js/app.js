@@ -7,7 +7,8 @@ var screenHeight = window.innerHeight;
 
 var c = document.getElementById('cvs');
 var canvas = c.getContext('2d');
-c.width = screenWidth; c.height = screenHeight;
+c.width = screenWidth;
+c.height = screenHeight;
 
 var KEY_ENTER = 13;
 
@@ -35,17 +36,17 @@ window.onload = function() {
     var btn = document.getElementById('startButton'),
         nickErrorText = document.querySelector('#startMenu .input-error');
 
-    btn.onclick = function () {
+    btn.onclick = function() {
 
         // check if the nick is valid
         if (validNick()) {
             startGame();
         } else {
-            alertify.error("Nick name must be alphanumeric characters only!");
+            alert("Nick name must be alphanumeric characters only!");
         }
     };
 
-    playerNameInput.addEventListener('keypress', function (e) {
+    playerNameInput.addEventListener('keypress', function(e) {
         var key = e.which || e.keyCode;
 
         if (key === KEY_ENTER) {
@@ -59,26 +60,26 @@ window.onload = function() {
 };
 
 function SetupSocket(socket) {
-  game.handleNetwork(socket);
+    game.handleNetwork(socket);
 }
 
-window.requestAnimFrame = (function(){
-    return  window.requestAnimationFrame       ||
-            window.webkitRequestAnimationFrame ||
-            window.mozRequestAnimationFrame    ||
-            function( callback ){
-                window.setTimeout(callback, 1000 / 60);
-            };
+window.requestAnimFrame = (function() {
+    return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        function(callback) {
+            window.setTimeout(callback, 1000 / 60);
+        };
 })();
 
-function animloop(){
+function animloop() {
     requestAnimFrame(animloop);
     gameLoop();
 }
 
 function gameLoop() {
-  game.handleLogic();
-  game.handleGraphics(canvas);
+    game.handleLogic();
+    game.handleGraphics(canvas);
 }
 
 window.addEventListener('resize', function() {
