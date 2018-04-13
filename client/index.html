@@ -1,30 +1,33 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>unlit.io</title>
     <link rel="shortcut icon" href="img/icon.png">
     <link rel="icon" href="img/icon.png">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-</head>
-
-<body>
+  </head>
+  <body>
+    <p id="title" class="animated zoomIn">unlit.io</p>
     <div id="gameAreaWrapper" style="display:none;">
         <canvas tabindex="1" id="cvs"></canvas>
     </div>
-    <p class="title animated zoomIn">unlit.io</p>
     <div id="startMenuWrapper">
         <div id="startMenu">
             <input type="text" tabindex="0" autofocus placeholder="Enter your name here" id="playerNameInput" />
+            <b class="input-error">Nick name must be alphanumeric characters only!</b>
+            <br />
             <button id="startButton">Play</button>
+            <p></p>
         </div>
+      </div>
+    <div id="footer">
+      <p style="color:white;"><a href="https://github.com/biggomega/io/" target="_blank" class="link">GitHub</a> | <a href="credits/index.html" class="link">Credits</a></p>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="./js/game.js"></script>
     <script src="./js/app.js"></script>
-    <script src='http://use.edgefonts.net/de-walpergens-pica.js'></script>
-</body>
-
+    <script src='./js/de-walpergens-pica.js'></script>
+  </body>
 </html>
