@@ -41,7 +41,7 @@ window.onload = function() {
         if (validNick()) {
             startGame();
         } else {
-            nickErrorText.style.display = 'inline';
+            alertify.error("Nick name must be alphanumeric characters only!");
         }
     };
 
