@@ -9,11 +9,14 @@ app.use(express.static(__dirname + '/../client'));
 
 
 io.on('connection', function(socket){
-  console.log('a user connected');
+  console.log('user connected to socket ' + socket.id);
+  socket.emit('id', socket.id);
   socket.on('disconnect', function(){
-    console.log('user disconnected');
+    console.log('user ' + socket.id + ' disconnected');
+    io.emit('remove_pl', socket.id);
   });
   socket.on('init', function(pl){
+    console.log('recieved init');
     if (JSON.parse(pl).id != "") {
       console.log('player initiated: ' + pl);
       io.emit('init', pl);

@@ -1,24 +1,14 @@
 function Game() { };
 
-var socket = io();
-
-var temp_id = "";
-var findIP = new Promise(r=>{var w=window,a=new (w.RTCPeerConnection||w.mozRTCPeerConnection||w.webkitRTCPeerConnection)({iceServers:[]}),b=()=>{};a.createDataChannel("");a.createOffer(c=>a.setLocalDescription(c,b,b),b);a.onicecandidate=c=>{try{c.candidate.candidate.match(/([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g).forEach(r)}catch(e){}}});
-
-findIP.then(ip => {
-  temp_id = ip;
-})
-
 var Circle = class {
  constructor(initialX, initialY, id) {
    this.x = initialX;
    this.y = initialY;
    this.id = id;
  }
- update(newX, newY, socket) {
+ update(newX, newY) {
    this.x = newX;
    this.y = newY;
-   socket.emit('update', JSON.stringify(this));
  }
  draw(pl_arr, ctx) {
    ctx.beginPath();
@@ -41,7 +31,7 @@ var Circle = class {
  }
 }
 
-var player = new Circle(100, 100, temp_id);
+var player = new Circle(100, 100, "");
 var players = [];
 
 Game.prototype.handleNetwork = function(socket) {
@@ -67,13 +57,12 @@ Game.prototype.handleNetwork = function(socket) {
 
   function remove_player(pl_arr, pl) {
     for (var i=0; i < pl_arr.length; i++) {
-      if (pl_arr[i].id == pl.id) {
+      if (pl_arr[i].id == pl) {
         pl_arr.splice(i, 1);
       }
     }
     return(pl_arr);
   }
-
   socket.on('init', function(new_player){
     console.log("Recieved init call from "+JSON.parse(new_player).id);
     if (JSON.parse(new_player).id != player.get_id() && player_not_found(players, JSON.parse(new_player))) {
@@ -87,17 +76,19 @@ Game.prototype.handleNetwork = function(socket) {
       players = replace_player(players, JSON.parse(upd_player));
     }
   });
-  socket.on('disconnect', function(){
-    socket.emit('remove_pl', JSON.stringify(player));
+  socket.on('remove_pl', function(old_pl_id){
+    players = remove_player(players, old_pl_id);
   });
-  socket.on('remove_pl', function(old_pl){
-    players = remove_player(players, JSON.parse(old_pl));
+  socket.on('id', function(id){
+    player.change_id(id);
+    console.log('changed id to '+ id);
+    socket.emit('init', JSON.stringify(player));
   });
 }
 
 Game.prototype.handleLogic = function(socket) {
-  console.log('Game is running');
-  player.update(mouseX, mouseY, socket);
+  player.update(mouseX, mouseY);
+  socket.emit('update', JSON.stringify(player));
 }
 
 Game.prototype.handleGraphics = function(gfx, width, height) {

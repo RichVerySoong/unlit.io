@@ -81,7 +81,7 @@ function animloop(){
 }
 
 function gameLoop() {
-  game.handleLogic();
+  game.handleLogic(socket);
   game.handleGraphics(canvas, c.width, c.height);
 }
 
