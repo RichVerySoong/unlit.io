@@ -123,3 +123,10 @@ canvas {
 .footer a:hover {
     opacity: 0.6;
 }
+
+#rules {
+  text-align: center;
+  text-decoration: bold;
+  font-size: 20px;
+  font-family: de-walpergens-pica;
+}
