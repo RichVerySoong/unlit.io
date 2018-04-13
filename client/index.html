@@ -5,20 +5,23 @@
     <title>unlit.io</title>
     <link rel="shortcut icon" href="img/icon.png">
     <link rel="icon" href="img/icon.png">
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
 </head>
 <body>
+    <p id="title" class="animated zoomIn">unlit.io</p>
     <div id="gameAreaWrapper" style="display:none;">
         <canvas tabindex="1" id="cvs"></canvas>
     </div>
     <div id="startMenuWrapper">
         <div id="startMenu">
-            <p class="animated zoomIn">unlit.io</p>
             <input type="text" tabindex="0" autofocus placeholder="Enter your name here" id="playerNameInput" />
             <b class="input-error">Nick name must be alphanumeric characters only!</b>
             <br />
             <button id="startButton">Play</button>
+            <a href="credits/index.html"><p class="link">Credits</p></a>
+            <p></p>
+            <a href="https://github.com/biggomega/io/"><p class="link"><img id="git" src="img/github.svg">GitHub</p></a>
         </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
