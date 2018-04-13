@@ -13,12 +13,12 @@ var Circle = class {
     draw(pl_arr, ctx) {
         ctx.beginPath();
         ctx.arc(this.x, this.y, 10, 0, 2 * Math.PI, true);
-        ctx.fillStyle = "#000000";
+        ctx.fillStyle = "#fff";
         ctx.fill();
         for (var i = 0; i < pl_arr.length; i++) {
             ctx.beginPath();
             ctx.arc(pl_arr[i].x, pl_arr[i].y, 10, 0, 2 * Math.PI, true);
-            ctx.fillStyle = "#000000";
+            ctx.fillStyle = "#fff";
             ctx.fill();
         }
     }
