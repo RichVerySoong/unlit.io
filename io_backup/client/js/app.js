@@ -81,8 +81,13 @@ function animloop() {
 }
 
 function gameLoop() {
+<<<<<<< HEAD:io_backup/client/js/app.js
     game.handleLogic(socket);
     game.handleGraphics(canvas, c.width, c.height);
+=======
+  game.handleLogic(socket);
+  game.handleGraphics(canvas, c.width, c.height);
+>>>>>>> 599ce9f23293ddea07cd767fe4272fdc84643880:client/js/app.js
 }
 
 window.addEventListener('resize', function() {
