@@ -98,3 +98,27 @@ canvas {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+
+.footer {
+    width: 100%;
+    position: relative;
+    bottom: 0px;
+    text-align: center;
+    z-index: 9999;
+}
+
+.footer a {
+    margin: 5px;
+    margin-top: 5px;
+    color: white;
+    opacity: 0.8;
+    text-decoration: underline;
+    text-decoration: bold;
+    font-size: 15px;
+    font-family: arial;
+    font-style: normal;
+}
+
+.footer a:hover {
+    opacity: 0.6;
+}
