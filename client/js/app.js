@@ -8,10 +8,6 @@ var screenHeight = window.innerHeight;
 var c = document.getElementById('cvs');
 var canvas = c.getContext('2d');
 c.width = screenWidth; c.height = screenHeight;
-var socket = io();
-
-var mouseX = 0;
-var mouseY = 0;
 
 var KEY_ENTER = 13;
 
@@ -82,7 +78,7 @@ function animloop(){
 
 function gameLoop() {
   game.handleLogic();
-  game.handleGraphics(canvas, c.width, c.height);
+  game.handleGraphics(canvas);
 }
 
 window.addEventListener('resize', function() {
@@ -91,10 +87,3 @@ window.addEventListener('resize', function() {
     c.width = screenWidth;
     c.height = screenHeight;
 }, true);
-
-function setMousePosition(e) {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-}
-
-c.addEventListener("mousemove", setMousePosition, false);
