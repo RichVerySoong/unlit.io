@@ -9,8 +9,10 @@ app.use(express.static(__dirname + '/../client'));
 
 
 io.on('connection', function(socket) {
+    console.log('User connected to socket ' + socket.id);
     socket.emit('id', socket.id);
     socket.on('disconnect', function() {
+        console.log('User disconected from socket' + socket.id);
         io.emit('remove_pl', socket.id);
     });
     socket.on('init', function(pl) {
