@@ -27,7 +27,6 @@ function startGame() {
     animloop();
 }
 
-// check if nick is valid alphanumeric characters (and underscores)
 function validNick() {
     var regex = /^\w*$/;
     return regex.exec(playerNameInput.value) !== null;
@@ -41,7 +40,6 @@ window.onload = function() {
 
     btn.onclick = function() {
 
-        // check if the nick is valid
         if (validNick()) {
             startGame();
         } else {
