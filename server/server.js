@@ -7,24 +7,9 @@ var config  = require('./config.json');
 
 app.use(express.static(__dirname + '/../client'));
 
-
-io.on('connection', function(socket){
-  console.log('a user connected');
-  socket.on('disconnect', function(){
-    console.log('user disconnected');
-  });
-  socket.on('init', function(pl){
-    if (JSON.parse(pl).id != "") {
-      console.log('player initiated: ' + pl);
-      io.emit('init', pl);
-    }
-  });
-  socket.on('update', function(pl){
-    if (JSON.parse(pl).id != "") {
-      console.log("Updating player " + JSON.parse(pl).id);
-      io.emit('update', pl);
-    }
-  });
+io.on('connection', function (socket) {
+  console.log("Somebody connected!");
+  // Write your code here
 });
 
 var serverPort = process.env.PORT || config.port;
