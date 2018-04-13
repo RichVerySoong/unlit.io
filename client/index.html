@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="img/icon.png">
     <link rel="icon" href="img/icon.png">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
 </head>
 
 <body>
@@ -15,15 +15,16 @@
         <canvas tabindex="1" id="cvs"></canvas>
     </div>
     <p class="title animated bounceInDown">unlit.io</p>
+    <p id = "rules" style="color:white;">Welcome to unlit.io!</p>
     <div id="startMenuWrapper">
         <div id="startMenu">
-            <input type="text" tabindex="0" spellcheck="false" autofocus placeholder="Enter your name here" id="playerNameInput" />
+            <input type="text" tabindex="0" spellcheck="false" autofocus placeholder="Enter your nickname here" id="playerNameInput" />
             <button id="startButton">Play</button>
         </div>
     </div>
     <div class="footer">
         <p style="color:white;">
-            <a href="#" onclick="alert('Member login coming soon!')">Member Login</a> |
+            <a href="#" id="memberLogin" onclick="memberLogin()">Member Login</a> |
             <a href="https://github.com/biggomega/unlit.io" target="_blank">GitHub</a> |
             <a href="https://github.com/biggomega/unlit.io/issues" target="_blank">Issues</a>
         </p>
@@ -33,6 +34,8 @@
     <script src="./js/game.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/de-walpergens-pica.js"></script>
+    <script src="./js/main.js"></script>
+
 </body>
 
 </html>
