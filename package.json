@@ -1,16 +1,16 @@
 {
-    "name": "unlit.io",
-    "version": "1.0.0",
-    "description": "Online flashlight tag",
-    "homepage": "http://unlit.io",
-    "main": "server/server.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server/server.js"
-    },
-    "author": "Ben Botvinick",
-    "dependencies": {
-        "express": "^4.13.0",
-        "socket.io": "^1.3.5"
-    }
+  "name": "unlit.io",
+  "version": "1.0.0",
+  "description": "Online flashlight tag",
+  "homepage": "http://unlit.io",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "author": "Ben Botvinick",
+  "dependencies": {
+    "express": "^4.13.0",
+    "socket.io": "^1.3.5"
+  }
 }
