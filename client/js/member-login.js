@@ -8,10 +8,12 @@ function memberLogin() {
       passwordInput.id = "playerPasswordInput";
       passwordInput.placeholder = "Enter your password here";
       $("#playerNameInput").after(passwordInput);
+      playerNameInput.placeholder = "Enter your username here"
       document.getElementById("memberLogin").innerHTML = "Normal Login";
     }
     else {
       $("#playerPasswordInput").remove();
+      playerNameInput.placeholder = "Enter your nickname here"
       document.getElementById("memberLogin").innerHTML = "Member Login";
     }
 }
