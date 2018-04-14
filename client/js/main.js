@@ -37,6 +37,7 @@ var interval = setInterval(function() {
     document.getElementById("rules").innerHTML = ruleList[place % ruleList.length]
     place += 1;
 }, 6000);
+
 document.getElementById("startButton").addEventListener("click", function() {
     clearInterval(interval);
 });
