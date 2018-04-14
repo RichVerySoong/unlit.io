@@ -17,6 +17,15 @@ You can check out how to play on our [wiki](https://github.com/huytd/agar.io-clo
 - Everytime a food particle is eaten by a player, **1** new food particle will respawn.
 - The more food you eat, the slower you move to make the game fairer for all.
 
+## Credits
+- Ben Botvinick - System Administration and Development Operations Management
+- Robert May - Server Architecture and Backend Development
+- Sequoyah Sudler - Frontend Development
+- Dylan Marchlinski - Web Design
+- Lucas Kiewek - Game Design
+- Avi Sriram - Game Design
+- Rich Soong - Game Design
+
 ## License
 >You can check out the full license [here](https://github.com/huytd/agar.io-clone/blob/master/LICENSE).
 
