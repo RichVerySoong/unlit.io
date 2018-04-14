@@ -128,5 +128,5 @@ canvas {
     font-size: 20px;
     font-family: de-walpergens-pica;
     margin-top: 0px;
-    opacity: 0;
+    animation:fading 5s infinite
 }
