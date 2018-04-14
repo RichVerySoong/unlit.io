@@ -2,8 +2,6 @@
 
 An online game built with socket.IO and HTML5 canvas on top of NodeJS.
 
----
-
 ## How to Play
 You can check out how to play on our [wiki](https://github.com/huytd/agar.io-clone/wiki/How-to-Play).
 
@@ -18,8 +16,6 @@ You can check out how to play on our [wiki](https://github.com/huytd/agar.io-clo
 - Everytime a player joins the game, **3** food particles will spawn.
 - Everytime a food particle is eaten by a player, **1** new food particle will respawn.
 - The more food you eat, the slower you move to make the game fairer for all.
-
----
 
 ## License
 >You can check out the full license [here](https://github.com/huytd/agar.io-clone/blob/master/LICENSE).
