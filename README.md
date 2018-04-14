@@ -1,4 +1,4 @@
-#unlit.io
+# unlit.io
 
 An online game built with socket.IO and HTML5 canvas on top of NodeJS.
 
