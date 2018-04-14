@@ -3,7 +3,6 @@
 An online game built with socket.IO and HTML5 canvas on top of NodeJS.
 
 ## How to Play
-You can check out how to play on our [wiki](https://github.com/huytd/agar.io-clone/wiki/How-to-Play).
 
 #### Game Basics
 - Move your mouse around the screen to move your ghost.
