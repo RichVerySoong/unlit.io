@@ -128,5 +128,6 @@ canvas {
     font-size: 20px;
     font-family: de-walpergens-pica;
     margin-top: 0px;
-    opacity: 0;
+    opacity: 1;
+    transition: opacity 2s linear;
 }

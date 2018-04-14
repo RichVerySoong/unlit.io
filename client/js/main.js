@@ -17,26 +17,12 @@ function memberLogin() {
     }
 }
 
-$(document).ready(function() {
-    var rules = $("#rules");
-
-    function cycle() {
-        rules.animate({
-            opacity: "+=2"
-        }, 3000);
-        rules.animate({
-            opacity: "-=2"
-        }, 3000, cycle);
-    }
-    cycle();
-});
-
 var place = 0;
 var ruleList = ["Click to toggle your flashlight!", "Shine your light on other ghosts!", "Avoid other players' flashlights!", "Welcome to unlit.io!"];
 var interval = setInterval(function() {
     document.getElementById("rules").innerHTML = ruleList[place % ruleList.length]
     place += 1;
-}, 6000);
+}, 10000);
 document.getElementById("startButton").addEventListener("click", function() {
     clearInterval(interval);
 })
