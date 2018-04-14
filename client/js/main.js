@@ -9,7 +9,7 @@ function memberLogin() {
         passwordInput.placeholder = "Enter your password here";
         $("#playerNameInput").after(passwordInput);
         playerNameInput.placeholder = "Enter your username here"
-        document.getElementById("memberLogin").innerHTML = "Normal Login";
+        document.getElementById("memberLogin").innerHTML = "Guest Login";
     } else {
         $("#playerPasswordInput").remove();
         playerNameInput.placeholder = "Enter your nickname here";
