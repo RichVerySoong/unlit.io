@@ -28,7 +28,6 @@ canvas {
     text-align: center;
     font-family: de-walpergens-pica;
     font-size: 80px;
-    font-weight: bold;
     font-style: italic;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -38,7 +37,6 @@ canvas {
 
 #startMenu {
     margin: auto;
-    margin-top: 30px;
     width: 350px;
     padding: 20px;
     border-radius: 5px 5px 5px 5px;
