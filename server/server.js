@@ -7,7 +7,6 @@ var config = require('./config.json');
 
 app.use(express.static(__dirname + '/../client'));
 
-
 io.on('connection', function(socket) {
     console.log('User connected to socket ' + socket.id);
     socket.emit('id', socket.id);
