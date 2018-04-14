@@ -30,6 +30,7 @@ $(document).ready(function() {
     }
     runIt();
 });
+
 var place = 0;
 var ruleList = ["Click to toggle your flashlight!", "Shine your light on other ghosts!", "Avoid other players' flashlights!", "Welcome to unlit.io!"];
 var interval = setInterval(function(){
@@ -40,13 +41,4 @@ document.getElementById("startButton").addEventListener("click", function(){
   clearInterval(interval);
 })
 
-window.onload = changeText()
-function changeText() {
-    var place = 0;
-    var ruleList = ["Click to toggle your flashlight!", "Shine your light on other ghosts!", "Avoid other players' flashlights!"];
-    setInterval(function(changeText) {
-        document.getElementById("rules").innerHTML = ruleList[place % ruleList.length]
-        place += 1
-    }, 6000);
-}
 window.onload = changeText();
