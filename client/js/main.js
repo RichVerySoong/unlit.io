@@ -26,12 +26,14 @@ $(document).ready(function() {
   runIt();
 });
 
-function changeText() {
-  var place = 0;
-  var ruleList = ["Move your mouse to turn you character and flashlight", "Click to toggle your flashlight", "Hit other ghosts with your flashlight", "Don't get hit by another ghost's flahslight", "Be the last ghost living"];
-  setInterval(function(changeText){
-    document.getElementById("rules").innerHTML = ruleList[place%5]
-    place += 1
-  }, 6000);
-}
+var place = 0;
+var ruleList = ["Click to toggle your flashlight!", "Shine your light on other ghosts!", "Avoid other players' flashlights!"];
+var interval = setInterval(function(){
+  document.getElementById("rules").innerHTML = ruleList[place % ruleList.length]
+  place += 1;
+}, 6000);
+document.getElementById("startButton").addEventListener("click", function(){
+  clearInterval(interval);
+})
+
 window.onload = changeText()
