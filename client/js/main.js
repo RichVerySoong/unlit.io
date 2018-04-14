@@ -23,10 +23,10 @@ $(document).ready(function() {
     function cycle() {
         rules.animate({
             opacity: "+=2"
-        }, 3000);
+        }, 2000);
         rules.animate({
             opacity: "-=2"
-        }, 3000, cycle);
+        }, 2000, cycle);
     }
     cycle();
 });
@@ -36,7 +36,7 @@ var ruleList = ["Click to toggle your flashlight!", "Shine your light on other g
 var interval = setInterval(function() {
     document.getElementById("rules").innerHTML = ruleList[place % ruleList.length]
     place += 1;
-}, 6000);
+}, 4000);
 document.getElementById("startButton").addEventListener("click", function() {
     clearInterval(interval);
 })

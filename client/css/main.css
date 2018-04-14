@@ -104,17 +104,14 @@ canvas {
     bottom: 0px;
     text-align: center;
     z-index: 9999;
+    color: #eee;
 }
 
 .footer a {
+    color: #aaa;
     margin: 5px;
     margin-top: 5px;
-    color: white;
-    opacity: 0.8;
-    text-decoration: underline;
-    text-decoration: bold;
     font-size: 15px;
-    font-family: arial;
     font-style: normal;
 }
 
