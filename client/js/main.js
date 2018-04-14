@@ -18,17 +18,17 @@ function memberLogin() {
 }
 
 $(document).ready(function() {
-    var rules = $('#rules');
+    var rules = $("#rules");
 
-    function runIt() {
+    function cycle() {
         rules.animate({
-            opacity: '+=2'
+            opacity: "+=2"
         }, 3000);
         rules.animate({
-            opacity: '-=2'
-        }, 3000, runIt);
+            opacity: "-=2"
+        }, 3000, cycle);
     }
-    runIt();
+    cycle();
 });
 
 var place = 0;
