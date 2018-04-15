@@ -1,5 +1,6 @@
 function Game() {};
 
+
 var Circle = class {
     constructor(initialX, initialY, id) {
         this.x = initialX;
@@ -10,14 +11,14 @@ var Circle = class {
         this.x = newX;
         this.y = newY;
     }
-    draw(pl_arr, ctx) {
+    draw(pl_arr, ctx, width, height, canvX, canvY) {
         ctx.beginPath();
-        ctx.arc(this.x, this.y, 10, 0, 2 * Math.PI, true);
+        ctx.arc(width/2, height/2, 10, 0, 2 * Math.PI, true);
         ctx.fillStyle = "#fff";
         ctx.fill();
         for (var i = 0; i < pl_arr.length; i++) {
             ctx.beginPath();
-            ctx.arc(pl_arr[i].x, pl_arr[i].y, 10, 0, 2 * Math.PI, true);
+            ctx.arc(canvX + pl_arr[i].x, canvY + pl_arr[i].y, 10, 0, 2 * Math.PI, true);
             ctx.fillStyle = "#fff";
             ctx.fill();
         }
@@ -83,12 +84,59 @@ Game.prototype.handleNetwork = function(socket) {
     });
 }
 
-Game.prototype.handleLogic = function(socket) {
-    player.update(mouseX, mouseY);
+var speedX = 0;
+var speedY = 0;
+var canvX = 0;
+var canvY = 0;
+var plX = 10000;
+var plY = 10000;
+
+Game.prototype.handleLogic = function(socket, width, height) {
+    speedX = -(mouseX - (width/2))/85;
+    speedY = -(mouseY - (height/2))/85;
+
+    plX = (plX == 10000) ? width/2 : plX;
+    plY = (plY == 10000) ? height/2 : plY;
+
+    // if speed > some_constant
+    if (speedX > 3) {
+      speedX = 3;
+    } else if (speedX < -3) {
+      speedX = -3;
+    }
+
+    if (speedY > 3) {
+      speedY = 3;
+    } else if (speedY < -3) {
+      speedY = -3;
+    }
+
+    if (!(canvX + speedX > width / 2) && !(canvX + speedX < (-1 * width / 2))){
+      canvX += speedX;
+      plX -= speedX;
+    }
+    if (!(canvY + speedY > height / 2) && !(canvY + speedY < (-1 * height / 2))){
+      canvY += speedY;
+      plY -= speedY;
+    }
+
+    console.log("player location: " + plX, plY);
+    player.update(plX, plY);
     socket.emit('update', JSON.stringify(player));
 }
 
 Game.prototype.handleGraphics = function(gfx, width, height) {
     gfx.clearRect(0, 0, width, height);
-    player.draw(players, gfx);
+
+    gfx.beginPath();
+    gfx.fillStyle = "black";
+    gfx.fillRect(0, 0, width, height);
+
+    gfx.beginPath();
+    gfx.lineWidth = "2";
+    gfx.strokeStyle = "white";
+    gfx.rect(canvX, canvY, width, height);
+    gfx.stroke();
+
+    player.draw(players, gfx, width, height, canvX, canvY);
 }

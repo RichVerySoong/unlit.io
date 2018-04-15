@@ -22,7 +22,7 @@ function startGame() {
     playerName = playerNameInput.value.replace(/(<([^>]+)>)/ig, '');
     document.getElementById('gameAreaWrapper').style.display = 'block';
     document.getElementById('startMenuWrapper').style.display = 'none';
-    socket = io();
+    var socket = io();
     SetupSocket(socket);
     animloop();
 }
@@ -79,7 +79,7 @@ function animloop() {
 }
 
 function gameLoop() {
-    game.handleLogic(socket);
+    game.handleLogic(socket, c.width, c.height);
     game.handleGraphics(canvas, c.width, c.height);
 }
 
