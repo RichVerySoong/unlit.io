@@ -1,6 +1,5 @@
 function Game() {};
 
-
 var Circle = class {
     constructor(initialX, initialY, id) {
         this.x = initialX;
