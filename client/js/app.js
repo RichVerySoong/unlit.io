@@ -39,11 +39,14 @@ window.onload = function() {
         nickErrorText = document.querySelector('#startMenu .input-error');
 
     btn.onclick = function() {
-
-        if (validNick()) {
-            startGame();
+        if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/iPhone|iPad|iPod/i) || navigator.userAgent.match(/Opera Mini/i) || navigator.userAgent.match(/IEMobile/i)) {
+            alert("This game has not yet been optimized for mobile.");
         } else {
-            alert("Nickname must contain only alphanumeric characters")
+            if (validNick()) {
+                startGame();
+            } else {
+                alert("Nickname must contain only alphanumeric characters.")
+            }
         }
     };
 
@@ -54,7 +57,7 @@ window.onload = function() {
             if (validNick()) {
                 startGame();
             } else {
-                alert("Nickname must contain only alphanumeric characters")
+                alert("Nickname must contain only alphanumeric characters.")
             }
         }
     });
