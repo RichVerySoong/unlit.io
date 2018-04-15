@@ -68,9 +68,8 @@ canvas {
 
 .button {
     position: relative;
-    margin-left: auto;
-    width: 40%;
-    margin: 10px;
+    margin: 0px;
+    width: 145px;
     height: 40px;
     box-sizing: border-box;
     font-size: large;
@@ -103,17 +102,19 @@ canvas {
 }
 
 #share {
+  margin-left: 10px;
   text-decoration: none;
   position: relative;
-  margin-left: auto;
-  width: 40%;
-  margin: 10px;
   height: 40px;
   box-sizing: border-box;
   font-size: large;
   font-family: de-walpergens-pica;
   color: white;
   text-align: center;
+}
+
+#startButton {
+  margin-right: 10px;
 }
 
 .footer {
