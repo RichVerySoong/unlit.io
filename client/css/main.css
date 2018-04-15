@@ -69,7 +69,7 @@ canvas {
 .button {
     position: relative;
     margin: 0px;
-    width: 145px;
+    width: 148px;
     height: 40px;
     box-sizing: border-box;
     font-size: large;
@@ -87,7 +87,6 @@ canvas {
     border-radius: 5px 5px 5px 5px;
     -moz-border-radius: 5px 5px 5px 5px;
     -webkit-border-radius: 5px 5px 5px 5px;
-    margin-bottom: 10px;
     outline: 0;
 }
 
@@ -101,20 +100,8 @@ canvas {
     box-shadow: none;
 }
 
-#share {
-  margin-left: 10px;
-  text-decoration: none;
-  position: relative;
-  height: 40px;
-  box-sizing: border-box;
-  font-size: large;
-  font-family: de-walpergens-pica;
-  color: white;
-  text-align: center;
-}
-
 #startButton {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 .footer {
