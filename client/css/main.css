@@ -69,7 +69,7 @@ canvas {
 .button {
     position: relative;
     margin: 0px;
-    width: 148px;
+    width: 149px;
     height: 40px;
     box-sizing: border-box;
     font-size: large;
@@ -101,7 +101,7 @@ canvas {
 }
 
 #startButton {
-    margin-right: 10px;
+    margin-right: 8px;
 }
 
 .footer {

@@ -41,3 +41,10 @@ var interval = setInterval(function() {
 document.getElementById("startButton").addEventListener("click", function() {
     clearInterval(interval);
 });
+
+document.getElementById("shareButton").addEventListener("click", function() {
+    window.open(
+        "https://www.facebook.com/sharer/sharer.php?u=https%3A//unlit.io",
+        "_blank"
+    );
+});
