@@ -110,7 +110,7 @@ canvas {
     bottom: 0px;
     text-align: center;
     z-index: 9999;
-    color: #eee;
+    color: #fff;
 }
 
 .footer a {
@@ -122,7 +122,7 @@ canvas {
 }
 
 .footer a:hover {
-    color: #eee;
+    color: #fff;
 }
 
 #rules {
