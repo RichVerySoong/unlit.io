@@ -13,7 +13,7 @@ var Circle = class {
     }
     draw(pl_arr, ctx, width, height, canvX, canvY) {
         ctx.beginPath();
-        ctx.arc(width/2, height/2, 10, 0, 2 * Math.PI, true);
+        ctx.arc(width / 2, height / 2, 10, 0, 2 * Math.PI, true);
         ctx.fillStyle = "#fff";
         ctx.fill();
         for (var i = 0; i < pl_arr.length; i++) {
@@ -92,32 +92,32 @@ var plX = 10000;
 var plY = 10000;
 
 Game.prototype.handleLogic = function(socket, width, height) {
-    speedX = -(mouseX - (width/2))/85;
-    speedY = -(mouseY - (height/2))/85;
+    speedX = -(mouseX - (width / 2)) / 85;
+    speedY = -(mouseY - (height / 2)) / 85;
 
-    plX = (plX == 10000) ? width/2 : plX;
-    plY = (plY == 10000) ? height/2 : plY;
+    plX = (plX == 10000) ? width / 2 : plX;
+    plY = (plY == 10000) ? height / 2 : plY;
 
     // if speed > some_constant
     if (speedX > 3) {
-      speedX = 3;
+        speedX = 3;
     } else if (speedX < -3) {
-      speedX = -3;
+        speedX = -3;
     }
 
     if (speedY > 3) {
-      speedY = 3;
+        speedY = 3;
     } else if (speedY < -3) {
-      speedY = -3;
+        speedY = -3;
     }
 
-    if (!(canvX + speedX > width / 2) && !(canvX + speedX < (-1 * width / 2))){
-      canvX += speedX;
-      plX -= speedX;
+    if (!(canvX + speedX > width / 2) && !(canvX + speedX < (-1 * width / 2))) {
+        canvX += speedX;
+        plX -= speedX;
     }
-    if (!(canvY + speedY > height / 2) && !(canvY + speedY < (-1 * height / 2))){
-      canvY += speedY;
-      plY -= speedY;
+    if (!(canvY + speedY > height / 2) && !(canvY + speedY < (-1 * height / 2))) {
+        canvY += speedY;
+        plY -= speedY;
     }
 
     console.log("player location: " + plX, plY);
